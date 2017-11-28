@@ -37,7 +37,7 @@ nightmare
       console.log('    --------------------------------------------------')
       console.log('    + Not Valid Email Verification:', testResults)
       console.log('    --------------------------------------------------')
-      console.log('    + Valid Email Submitted:', testResults)
+      console.log('    + Valid Email aSubmitted:', testResults)
       console.log('    --------------------------------------------------')
       console.log('    ')
       console.log('  TEST COMPLETED ')
