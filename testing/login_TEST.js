@@ -1,25 +1,32 @@
 const Nightmare = require('nightmare')
 const nightmare = Nightmare({ show: true })
 var testResults = 'Passed'
+const url = 'http://localhost:3000'
 
 
 nightmare
-  .goto('http://localhost:3000/login')
+  .viewport(1200, 1000)
+  .goto(url + '/login')
+  .wait(500)
+  .screenshot('../../../Testing Screenshots/login_test/correct-website.png')
   .click('#ed_293610547')
-  .wait(1000)
+  .wait(200)
   .type('#ed_293610547', 'eddyhr.test1@gmail.com')
-  .wait(1000)
+  .wait(200)
+  .screenshot('../../../Testing Screenshots/login_test/email_added.png')
   .click('#ed_293610546')
-  .wait(1000)
+  .wait(200)
   .type('#ed_293610546', 'Eddyhr!123')
-  .wait(1000)
+  .wait(200)
+  .screenshot('../../../Testing Screenshots/login_test/password_added.png')
   .click('.ed-btn-sign-in')
   .wait(3000)
+  .screenshot('../../../Testing Screenshots/login_test/logged_in.png')
   .end()
     .then(function (result) {
       console.log('    ')
       console.log('    ')
-      console.log('  TEST RESULTS: ')
+      console.log('  LOGIN - TEST RESULTS: ')
       console.log('    ')
       console.log('    + Directed To Correct Website:', testResults)
       console.log('    --------------------------------------------------')

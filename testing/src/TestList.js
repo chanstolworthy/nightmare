@@ -25,6 +25,29 @@ export default function TestList() {
                 <div className='test_desc'>Sends an email to the eployee that forgot their password</div>
             </div>
 
+{/* -------------------------------------COMPANY ENROLLMENT-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node company_enrollment_TEST.js</div>
+                <div className='test_desc'>Creates and Enrolls a new Company</div>
+            </div>
+
+{/* -------------------------------------EMPLOYEE ENROLLMENT ATTEMPT-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node create_employee_account_attempt_TEST.js</div>
+                <div className='test_desc'>Attempts to create an Employee Account from the login page</div>
+            </div>
+
+{/* -------------------------------------ADMIN EDIT SELF-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node admin_edit_self_TEST.js</div>
+                <div className='test_desc'>Logs Admin in, then edits Employee Information</div>
+            </div>
+{/* -------------------------------------ADMIN PERMISSIONS SELF-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node admin_permissions_TEST.js</div>
+                <div className='test_desc'>Checks the permissions for SELF</div>
+            </div>
+
         </div>
     )
 }
