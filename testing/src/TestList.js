@@ -45,8 +45,35 @@ export default function TestList() {
 {/* -------------------------------------ADMIN PERMISSIONS SELF-------------------------------------*/}
             <div className='test_list_cont'>
                 <div className='test_command'>node admin_permissions_TEST.js</div>
-                <div className='test_desc'>Checks the permissions for SELF</div>
+                <div className='test_desc'>Checks the permissions for an Admin</div>
             </div>
+            <div className='app_intro basic_titles'>Permissions</div>
+            {/* -------------------------------------EMPLOYEE - EMPLOYEE PERMISSIONS-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node employee_employee_permissions_TEST.js</div>
+                <div className='test_desc'>Checks the permissions for an Employee viewing another Employee</div>
+            </div>
+            {/* -------------------------------------EMPLOYEE - SELF PERMISSIONS-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node employee_self_permissions_TEST.js</div>
+                <div className='test_desc'>Checks the permissions for an Employee viewing their self</div>
+            </div>
+            {/* -------------------------------------MANAGER - EMPLOYEE PERMISSIONS-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node manager_employee_permissions_TEST.js</div>
+                <div className='test_desc'>Checks the permissions for a Manager viewing their Direct Reports</div>
+            </div>
+            {/* -------------------------------------ADMIN - EMPLOYEE PERMISSIONS-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node admin_employee_permissions_TEST.js</div>
+                <div className='test_desc'>Checks the permissions for an Admin viewing an Employee</div>
+            </div>
+            {/* -------------------------------------ADMIN - SELF PERMISSIONS-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node admin_self_permissions_TEST.js</div>
+                <div className='test_desc'>Checks the permissions for an Admin viewing their self</div>
+            </div>
+            
 
         </div>
     )

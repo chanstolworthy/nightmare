@@ -33,3 +33,11 @@
     align-items: center;
 
 }
+.basic_titles{
+    align-self: center;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    width: 70%;
+
+}
