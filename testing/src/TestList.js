@@ -50,6 +50,11 @@ export default function TestList() {
             <div className='app_intro basic_titles'>Permissions</div>
             {/* -------------------------------------EMPLOYEE - EMPLOYEE PERMISSIONS-------------------------------------*/}
             <div className='test_list_cont'>
+                <div className='test_command'>node permissions_TEST.js</div>
+                <div className='test_desc'>Checks the permissions for all access levels</div>
+            </div>
+            {/* -------------------------------------EMPLOYEE - EMPLOYEE PERMISSIONS-------------------------------------*/}
+            <div className='test_list_cont'>
                 <div className='test_command'>node employee_employee_permissions_TEST.js</div>
                 <div className='test_desc'>Checks the permissions for an Employee viewing another Employee</div>
             </div>
@@ -62,6 +67,11 @@ export default function TestList() {
             <div className='test_list_cont'>
                 <div className='test_command'>node manager_employee_permissions_TEST.js</div>
                 <div className='test_desc'>Checks the permissions for a Manager viewing their Direct Reports</div>
+            </div>
+            {/* -------------------------------------MANAGER - SELF PERMISSIONS-------------------------------------*/}
+            <div className='test_list_cont'>
+                <div className='test_command'>node manager_self_permissions_TEST.js</div>
+                <div className='test_desc'>Checks the permissions for a Manager viewing their self</div>
             </div>
             {/* -------------------------------------ADMIN - EMPLOYEE PERMISSIONS-------------------------------------*/}
             <div className='test_list_cont'>

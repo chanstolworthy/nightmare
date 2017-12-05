@@ -8,19 +8,19 @@ nightmare
 .goto(url + '/login')
 .wait(500)
 .click('#ed_293610547')
-.wait(100)
+.wait(25)
 .type('#ed_293610547', 'eddyhr.test1@gmail.com')
-.wait(100)
+.wait(25)
 .click('#ed_293610546')
-.wait(100)
+.wait(25)
 .type('#ed_293610546', 'Eddyhr!123')
-.wait(100)
+.wait(25)
 .click('.ed-btn-sign-in')
 .wait(2000)
 .exists('#ed_293610548')
 .then(function(result){
     console.log('   ')
-    console.log('  EMPLOYEE PERMISSIONS TEST:')
+    console.log('  ADMIN - EMPLOYEE PERMISSIONS TEST:')
     console.log(' ')
     console.log('>>> EMPLOYEE DIRECTORY <<<')
     console.log('       ADMIN VIEW ')
@@ -34,7 +34,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.email-link')
         .then(function(result){
             if (result) {
@@ -47,7 +47,7 @@ nightmare
 
     .then(function(){ 
         return nightmare
-            .wait(100)
+            .wait(25)
             .goto(url + '/employee/personal/' + userID)
             .wait('#ed_f_name293610599')
             .exists("#ed_f_name293610599")
@@ -67,7 +67,7 @@ nightmare
 })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_mid_initial293610603')
             .then(function(result){
                 if (result) {
@@ -80,7 +80,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_l_name293610606')
             .then(function(result){
                 if (result) {
@@ -93,7 +93,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_pref_name293610600')
             .then(function(result){
                 if (result) {
@@ -106,7 +106,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists("#ed_gender293610604")
             .then(function(result){
                 if (result) {
@@ -119,7 +119,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_gender_iden293610607')
             .then(function(result){
                 if (result) {
@@ -132,7 +132,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_b_day293610601')
             .then(function(result){
                 if (result) {
@@ -145,7 +145,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_shirt293610602')
             .then(function(result){
                 if (result) {
@@ -158,7 +158,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_marital_stat293610605')
             .then(function(result){
                 if (result) {
@@ -171,7 +171,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_ssn293610608')
             .then(function(result){
                 if (result) {
@@ -184,7 +184,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_shirt293610602')
             .then(function(result){
                 if (result) {
@@ -196,7 +196,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610579')
             .then(function(result){
                 if (result) {
@@ -208,7 +208,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('.ed-crop-edit-icon')
             .then(function(result){
                 if (result) {
@@ -225,7 +225,7 @@ nightmare
         console.log('       ADMIN -> EMPLOYEE ')
         console.log(' ')
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610626')
             .then(function(result){
                 if (result) {
@@ -237,7 +237,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610627')
             .then(function(result){
                 if (result) {
@@ -250,7 +250,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610628')
             .then(function(result){
                 if (result) {
@@ -263,7 +263,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610629')
             .then(function(result){
                 if (result) {
@@ -275,7 +275,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610630')
             .then(function(result){
                 if (result) {
@@ -287,7 +287,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610631')
             .then(function(result){
                 if (result) {
@@ -299,7 +299,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610632')
             .then(function(result){
                 if (result) {
@@ -311,7 +311,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610633')
             .then(function(result){
                 if (result) {
@@ -323,7 +323,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610592')
             .then(function(result){
                 if (result) {
@@ -339,7 +339,7 @@ nightmare
         console.log('       ADMIN -> EMPLOYEE ')
         console.log(' ')
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610634')
             .then(function(result){
                 if (result) {
@@ -351,7 +351,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610635')
             .then(function(result){
                 if (result) {
@@ -363,7 +363,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610636')
             .then(function(result){
                 if (result) {
@@ -375,7 +375,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610637')
             .then(function(result){
                 if (result) {
@@ -387,7 +387,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610593')
             .then(function(result){
                 if (result) {
@@ -403,7 +403,7 @@ nightmare
         console.log('       ADMIN -> EMPLOYEE ')
         console.log(' ')
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610638')
             .then(function(result){
                 if (result) {
@@ -415,7 +415,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610639')
             .then(function(result){
                 if (result) {
@@ -427,7 +427,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610640')
             .then(function(result){
                 if (result) {
@@ -439,7 +439,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610641')
             .then(function(result){
                 if (result) {
@@ -451,7 +451,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610594')
             .then(function(result){
                 if (result) {
@@ -463,7 +463,7 @@ nightmare
     })
     .then(function(){ 
         return nightmare
-            .wait(100)
+            .wait(25)
             .click('#ed_293610596')
             .wait('#ed_293610643')
             .exists("#ed_293610642")
@@ -483,7 +483,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610643')
         .then(function(result){
             if (result) {
@@ -495,7 +495,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610644')
         .then(function(result){
             if (result) {
@@ -507,7 +507,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610645')
         .then(function(result){
             if (result) {
@@ -519,7 +519,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610646')
         .then(function(result){
             if (result) {
@@ -531,7 +531,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610647')
         .then(function(result){
             if (result) {
@@ -543,7 +543,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610609')
         .then(function(result){
             if (result) {
@@ -559,7 +559,7 @@ nightmare
     console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-bonus-info')
         .then(function(result){
             if (result) {
@@ -571,7 +571,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610610')
         .then(function(result){
             if (result) {
@@ -583,7 +583,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610619')
         .then(function(result){
             if (result) {
@@ -599,7 +599,7 @@ nightmare
     console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-compensation-info')
         .then(function(result){
             if (result) {
@@ -611,7 +611,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610611')
         .then(function(result){
             if (result) {
@@ -627,7 +627,7 @@ nightmare
     console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-asset-info')
         .then(function(result){
             if (result) {
@@ -639,7 +639,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610612')
         .then(function(result){
             if (result) {
@@ -651,7 +651,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610648')
         .then(function(result){
             if (result) {
@@ -667,7 +667,7 @@ nightmare
     console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-direct-report-info')
         .then(function(result){
             if (result) {
@@ -679,7 +679,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610613')
         .then(function(result){
             if (result) {
@@ -691,7 +691,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610649')
         .then(function(result){
             if (result) {
@@ -707,7 +707,7 @@ nightmare
     console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-eeo-fsla-info')
         .then(function(result){
             if (result) {
@@ -737,7 +737,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .goto(url + '/employee/notes/' + userID)
         .wait(1500)
         .exists('.ed-notes-section')
@@ -751,7 +751,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610625')
         .then(function(result){
             if (result) {
@@ -781,7 +781,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .goto(url + '/employee/documents/' + userID)
         .wait(1500)
         .exists('.ed-document-tab-content')

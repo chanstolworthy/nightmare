@@ -8,19 +8,19 @@ nightmare
 .goto(url + '/login')
 .wait(500)
 .click('#ed_293610547')
-.wait(100)
+.wait(25)
 .type('#ed_293610547', 'eddyhr.test4@gmail.com')
-.wait(100)
+.wait(25)
 .click('#ed_293610546')
-.wait(100)
+.wait(25)
 .type('#ed_293610546', 'Eddyhr!123')
-.wait(100)
+.wait(25)
 .click('.ed-btn-sign-in')
 .wait(2000)
 .exists('#ed_293610548')
 .then(function(result){
     console.log('   ')
-    console.log('  EMPLOYEE SELF PERMISSIONS TEST:')
+    console.log('  EMPLOYEE - SELF PERMISSIONS TEST:')
     console.log(' ')
     console.log('>>> EMPLOYEE DIRECTORY <<<')
     console.log('       EMPLOYEE SELF VIEW ')
@@ -34,7 +34,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.email-link')
         .then(function(result){
             if (result) {
@@ -47,7 +47,7 @@ nightmare
 
     .then(function(){ 
         return nightmare
-            .wait(100)
+            .wait(25)
             .goto(url + '/employee/personal/' + userID)
             .wait('#ed_f_name293610599')
             .exists("#ed_f_name293610599")
@@ -67,7 +67,7 @@ nightmare
 })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_mid_initial293610603')
             .then(function(result){
                 if (result) {
@@ -80,7 +80,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_l_name293610606')
             .then(function(result){
                 if (result) {
@@ -93,7 +93,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_pref_name293610600')
             .then(function(result){
                 if (result) {
@@ -106,7 +106,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists("#ed_gender293610604")
             .then(function(result){
                 if (result) {
@@ -119,7 +119,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_gender_iden293610607')
             .then(function(result){
                 if (result) {
@@ -132,7 +132,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_b_day293610601')
             .then(function(result){
                 if (result) {
@@ -145,7 +145,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_shirt293610602')
             .then(function(result){
                 if (result) {
@@ -158,7 +158,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_marital_stat293610605')
             .then(function(result){
                 if (result) {
@@ -171,7 +171,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_ssn293610608')
             .then(function(result){
                 if (result) {
@@ -184,7 +184,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_shirt293610602')
             .then(function(result){
                 if (result) {
@@ -196,7 +196,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610579')
             .then(function(result){
                 if (result) {
@@ -208,7 +208,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('.ed-crop-edit-icon')
             .then(function(result){
                 if (result) {
@@ -218,6 +218,144 @@ nightmare
                 }
             })
     })
+    .then(function(){
+        return nightmare
+            .click('#ed_293610579')
+            .wait('#ed_293610590')
+            .exists('#ed_293610580')
+            .then(function(result){
+                if(result) {
+                    return console.log('   - Edit First Name: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit First Name: PASS")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610581')
+            .then(function(result){
+                if (result) {
+                    return console.log('   - Edit Middle Initial: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit Middle Initial: PASS")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610582')
+            .then(function(result){
+                if (result) {
+                    return console.log('   - Edit Last Name: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit Last Name: PASS")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610583')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Preferred Name: PASS')
+                } else {
+                    console.log("   - Edit Preferred Name: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610584')
+            .then(function(result){
+                if (result) {
+                    return console.log('   - Edit Gender: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit Gender: PASS")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610585')
+            .then(function(result){
+                if (result) {
+                    return console.log('   - Edit Birthday: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit Birthday: PASS")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610586')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Marital Status: PASS')
+                } else {
+                    console.log("   - Edit Marital Status: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610587')
+            .then(function(result){
+                if (result) {
+                    return console.log('   - Edit Social Security Number: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit Social Security Number: PASS")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610588')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Shirt Size: PASS')
+                } else {
+                    console.log("   - Edit Shirt Size: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610589')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Gender Identity: PASS')
+                } else {
+                    console.log("   - Edit Gender Identity: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610590')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + View Save Personal Info Button: PASS')
+                } else {
+                    console.log("   - View Save Personal Info Button: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .click('#ed_293610590')
+    })
+
 
     .then(function() {
         console.log(' ')
@@ -225,7 +363,7 @@ nightmare
         console.log('       EMPLOYEE -> SELF ')
         console.log(' ')
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610626')
             .then(function(result){
                 if (result) {
@@ -237,7 +375,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610627')
             .then(function(result){
                 if (result) {
@@ -250,7 +388,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610628')
             .then(function(result){
                 if (result) {
@@ -263,7 +401,7 @@ nightmare
 
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610629')
             .then(function(result){
                 if (result) {
@@ -275,7 +413,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610630')
             .then(function(result){
                 if (result) {
@@ -287,7 +425,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610631')
             .then(function(result){
                 if (result) {
@@ -299,7 +437,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610632')
             .then(function(result){
                 if (result) {
@@ -311,7 +449,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610633')
             .then(function(result){
                 if (result) {
@@ -323,7 +461,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610592')
             .then(function(result){
                 if (result) {
@@ -334,12 +472,135 @@ nightmare
             })
     })
     .then(function() {
+        return nightmare
+        .wait(25)
+            .wait(25)
+            .click('#ed_293610592')
+            .wait(100)
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+            .exists('#ed_293610650')
+            .then(function(result){
+                if(result) {
+                    return console.log('   - Edit Primary Email: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit Primary Email: PASS")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+            .exists('#ed_293610651')
+            .then(function(result){
+                if(result) {
+                    return console.log('   + Edit Secondary Email: PASS')
+                } else {
+                    console.log("   - Edit Secondary Email: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+            .exists('#ed_293610652')
+            .then(function(result){
+                if(result) {
+                    return console.log('   + Edit Primary Phone Number: PASS')
+                } else {
+                    console.log("   - Edit Primary Phone Number: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+            .exists('#ed_293610653')
+            .then(function(result){
+                if(result) {
+                    return console.log('   + Edit Work Phone Number: PASS')
+                } else {
+                    console.log("   - Edit Work Phone Number: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+            .exists('#ed_293610654')
+            .then(function(result){
+                if(result) {
+                    return console.log('   + Edit Work Phone Number EXT: PASS')
+                } else {
+                    console.log("   - Edit Work Phone Number EXT: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+            .exists('#ed_293610655')
+            .then(function(result){
+                if(result) {
+                    return console.log('   - Edit Address: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit Address: PASS")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+            .exists('#ed_293610656')
+            .then(function(result){
+                if(result) {
+                    return console.log('   - Edit City: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit City: PASS")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+            .exists('#ed_293610657')
+            .then(function(result){
+                if(result) {
+                    return console.log('   - Edit State: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit State: PASS")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+            .exists('#ed_293610658')
+            .then(function(result){
+                if(result) {
+                    return console.log('   - Edit Zip Code: FAIL - PERMISSIONS ERROR!')
+                } else {
+                    console.log("   + Edit Zip Code: PASS")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(25)
+        .click('#ed_293610659')
+    })
+
+
+    
+    .then(function() {
         console.log(' ')
         console.log('   --- EMERGENCY CONTACT CARD ---')
         console.log('       EMPLOYEE -> SELF ')
         console.log(' ')
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610634')
             .then(function(result){
                 if (result) {
@@ -351,7 +612,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610635')
             .then(function(result){
                 if (result) {
@@ -363,7 +624,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610636')
             .then(function(result){
                 if (result) {
@@ -375,7 +636,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610637')
             .then(function(result){
                 if (result) {
@@ -387,7 +648,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610593')
             .then(function(result){
                 if (result) {
@@ -398,12 +659,83 @@ nightmare
             })
     })
     .then(function() {
+        return nightmare
+            .wait(25)
+            .click('#ed_293610593')
+    })
+        .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610660')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Full Name: PASS')
+                } else {
+                    console.log("   - Edit Full Name: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610661')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Relationship: PASS')
+                } else {
+                    console.log("   - Edit Relationship: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610662')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Phone: PASS')
+                } else {
+                    console.log("   - Edit Phone: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610663')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Email: PASS')
+                } else {
+                    console.log("   - Edit Email: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610664')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + View Save Button: PASS')
+                } else {
+                    console.log("   - View Save Button: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .wait(100)
+        .click('#ed_293610664')
+        .wait(100)
+    })
+    .then(function() {
         console.log(' ')
         console.log('   --- SOCIAL MEDIA CARD ---')
         console.log('       EMPLOYEE -> SELF ')
         console.log(' ')
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610638')
             .then(function(result){
                 if (result) {
@@ -415,7 +747,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610639')
             .then(function(result){
                 if (result) {
@@ -427,7 +759,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610640')
             .then(function(result){
                 if (result) {
@@ -439,7 +771,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610641')
             .then(function(result){
                 if (result) {
@@ -451,7 +783,7 @@ nightmare
     })
     .then(function() {
         return nightmare
-            .wait(100)
+            .wait(25)
             .exists('#ed_293610594')
             .then(function(result){
                 if (result) {
@@ -461,9 +793,64 @@ nightmare
                 }
             })
     })
-    .then(function(){ 
+    .then(function() {
         return nightmare
             .wait(100)
+            .click('#ed_293610594')
+            .wait(25)
+            .exists('#ed_293610665')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit LinkedIn: PASS')
+                } else {
+                    console.log("   - Edit LinkedIn: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610666')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Facebook: PASS')
+                } else {
+                    console.log("   - Edit Facebook: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610667')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Instagram: PASS')
+                } else {
+                    console.log("   - Edit Instagram: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_293610668')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + Edit Twitter: PASS')
+                } else {
+                    console.log("   - Edit Twitter: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+    .then(function(){
+        return nightmare
+        .click('#ed_293610669')
+        .wait(200)
+    })
+    .then(function(){ 
+        return nightmare
+            .wait(25)
             .click('#ed_293610596')
             .wait('#ed_293610643')
             .exists("#ed_293610642")
@@ -483,7 +870,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610643')
         .then(function(result){
             if (result) {
@@ -495,7 +882,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610644')
         .then(function(result){
             if (result) {
@@ -507,7 +894,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610645')
         .then(function(result){
             if (result) {
@@ -519,7 +906,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610646')
         .then(function(result){
             if (result) {
@@ -531,7 +918,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610647')
         .then(function(result){
             if (result) {
@@ -543,7 +930,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610609')
         .then(function(result){
             if (result) {
@@ -559,7 +946,7 @@ nightmare
     console.log('       EMPLOYEE -> SELF ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-bonus-info')
         .then(function(result){
             if (result) {
@@ -571,7 +958,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610610')
         .then(function(result){
             if (result) {
@@ -583,7 +970,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610619')
         .then(function(result){
             if (result) {
@@ -599,7 +986,7 @@ nightmare
     console.log('       EMPLOYEE -> SELF ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-compensation-info')
         .then(function(result){
             if (result) {
@@ -611,7 +998,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610611')
         .then(function(result){
             if (result) {
@@ -627,7 +1014,7 @@ nightmare
     console.log('       EMPLOYEE -> SELF ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-asset-info')
         .then(function(result){
             if (result) {
@@ -639,7 +1026,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610612')
         .then(function(result){
             if (result) {
@@ -651,7 +1038,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610648')
         .then(function(result){
             if (result) {
@@ -667,7 +1054,7 @@ nightmare
     console.log('       EMPLOYEE -> SELF ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-direct-report-info')
         .then(function(result){
             if (result) {
@@ -679,7 +1066,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610613')
         .then(function(result){
             if (result) {
@@ -691,7 +1078,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610649')
         .then(function(result){
             if (result) {
@@ -707,7 +1094,7 @@ nightmare
     console.log('       EMPLOYEE -> SELF ')
     console.log(' ')
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('.ed-eeo-fsla-info')
         .then(function(result){
             if (result) {
@@ -737,7 +1124,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .goto(url + '/employee/notes/' + userID)
         .wait(1500)
         .exists('.ed-notes-section')
@@ -751,7 +1138,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .exists('#ed_293610625')
         .then(function(result){
             if (result) {
@@ -781,7 +1168,7 @@ nightmare
 })
 .then(function() {
     return nightmare
-        .wait(100)
+        .wait(25)
         .goto(url + '/employee/documents/' + userID)
         .wait(1500)
         .exists('.ed-document-tab-content')
