@@ -1,5 +1,8 @@
+//DEV: Chandler Stolworthy 12/2017
+
 var Nightmare = require('nightmare');
 var nightmare = Nightmare({ show: true });
+var d = new Date();
 const url = 'http://localhost:3000'
 const userID_1 = '1510873883586' //MANAGER
 const userID_2 = '1510874056660' //EMPLOYEE
@@ -25,13 +28,14 @@ nightmare
     console.log('   ')
     console.log('   ')
     console.log('   ')
-    console.log('   ')
-    console.log('   ')
     console.log('////////////////////////////P E R M I S S I O N S  T E S T////////////////////////////////////')
     console.log('   ')
     console.log('   ')
     console.log('   ')
-    console.log('  ALL PERMISSIONS TEST:')
+    console.log('   ')
+    console.log('ALL PERMISSIONS TEST:')
+    console.log('   ')
+    console.log('START - DATE/TIME: ' + d.getMonth() + '/' + d.getDay() + '/' +  d.getFullYear() + ' - ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds())
     console.log(' ')
     console.log('>>> EMPLOYEE DIRECTORY <<<')
     console.log('       EMPLOYEE VIEW ')
@@ -2808,7 +2812,7 @@ nightmare
                 console.log('>>> PERSONAL TAB <<<')
                 console.log(' ')
                 console.log('   --- PERSONAL INFORMATION CARD ---')
-                console.log('       EMPLOYEE -> SELF  ')
+                console.log('       MANAGER -> SELF  ')
                 console.log(' ')
                 if (result) {
                     return console.log('   + View First Name: PASS')
@@ -4324,7 +4328,7 @@ nightmare
                 .exists('#ed_293610593')
                 .then(function(result){
                     if (result) {
-                        return console.log('   + View Edit Emergency Contact Button: PASS!')
+                        return console.log('   + View Edit Emergency Contact Button: PASS`')
                     } else {
                         console.log("   - View Edit Emergency Contact Button: FAIL - PERMISSIONS ERROR!")
                     }
@@ -5911,6 +5915,7 @@ nightmare
                 return nightmare
                 .end()
                 .then(function(){
+                    console.log('   ')
                     console.log('   ')
                     console.log('   ')
                     console.log('   ')
