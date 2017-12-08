@@ -1,22 +1,24 @@
 var Nightmare = require('nightmare');
 var nightmare = Nightmare({ show: true });
-const url = 'http://localhost:3000'
-const userID = '1510874056660'
+const vars = require('../../../TestVariables')
 
-nightmare
+module.exports = {
+
+perm: function(){
+return nightmare
 .viewport(1200, 1000)
-.goto(url + '/login')
+.goto(vars.mainUrl + '/login')
 .wait(500)
 .click('#ed_293610547')
 .wait(25)
-.type('#ed_293610547', 'eddyhr.test4@gmail.com')
+.insert('#ed_293610547', vars.employeeEmail)
 .wait(25)
 .click('#ed_293610546')
 .wait(25)
-.type('#ed_293610546', 'Eddyhr!123')
+.type('#ed_293610546', vars.employeePassword)
 .wait(25)
 .click('.ed-btn-sign-in')
-.wait(2000)
+.wait(1000)
 .exists('#ed_293610548')
 .then(function(result){
     console.log('   ')
@@ -48,7 +50,7 @@ nightmare
     .then(function(){ 
         return nightmare
             .wait(25)
-            .goto(url + '/employee/personal/' + userID)
+            .goto(vars.mainUrl + '/employee/personal/' + vars.employeeID)
             .wait('#ed_f_name293610599')
             .exists("#ed_f_name293610599")
             .then(function (result) {
@@ -1125,7 +1127,7 @@ nightmare
 .then(function() {
     return nightmare
         .wait(25)
-        .goto(url + '/employee/notes/' + userID)
+        .goto(vars.mainUrl + '/employee/notes/' + vars.employeeID)
         .wait(1500)
         .exists('.ed-notes-section')
         .then(function(result){
@@ -1169,7 +1171,7 @@ nightmare
 .then(function() {
     return nightmare
         .wait(25)
-        .goto(url + '/employee/documents/' + userID)
+        .goto(vars.mainUrl + '/employee/documents/' + vars.employeeID)
         .wait(1500)
         .exists('.ed-document-tab-content')
         .then(function(result){
@@ -1180,18 +1182,20 @@ nightmare
             }
         })
 })
-
-
+.then(function(){
+    return nightmare
+    .end()
     .then(function(){
-        return nightmare
-        .end()
-        .then(function(){
-            console.log(' ')
-            console.log('TEST COMPLETED')
-            console.log(' ')
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
-
+        console.log(' ')
+        console.log(' ')
+        console.log('E M P L O Y E E - E M P L O Y E E   C O M P L E T E')
+        console.log(' ')
+        console.log(' ')
     })
+    .catch(function (error) {
+        console.log(error)
+    })
+
+})
+}
+}

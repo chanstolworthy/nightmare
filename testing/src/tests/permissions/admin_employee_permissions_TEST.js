@@ -1,35 +1,36 @@
 var Nightmare = require('nightmare');
 var nightmare = Nightmare({ show: true });
-const url = 'http://localhost:3000'
-const userID = '1510873883586'
+const vars = require('../../../TestVariables')
 
-nightmare
+module.exports = {
+perm: function(){
+return nightmare
 .viewport(1200, 1000)
-.goto(url + '/login')
+.goto(vars.mainUrl + '/login')
 .wait(500)
 .click('#ed_293610547')
 .wait(25)
-.type('#ed_293610547', 'eddyhr.test4@gmail.com')
+.type('#ed_293610547', vars.AdminEmail )
 .wait(25)
 .click('#ed_293610546')
 .wait(25)
-.type('#ed_293610546', 'Eddyhr!123')
+.type('#ed_293610546', vars.AdminPassword)
 .wait(25)
 .click('.ed-btn-sign-in')
 .wait(2000)
 .exists('#ed_293610548')
 .then(function(result){
     console.log('   ')
-    console.log('  EMPLOYEE - EMPLOYEE PERMISSIONS TEST:')
+    console.log('  ADMIN - EMPLOYEE PERMISSIONS TEST:')
     console.log(' ')
     console.log('>>> EMPLOYEE DIRECTORY <<<')
-    console.log('       EMPLOYEE VIEW ')
+    console.log('       ADMIN VIEW ')
     console.log(' ')
     if(result){
-        console.log('   - Invite New Employee Disabled: FAIL - PERMISSIONS ERROR!')
+        console.log('   + Invite New Employee: PASS')
     }
     else{
-        console.log('   + Invite New Employee Disabled: PASS')
+        console.log('   - Invite New Employee: FAIL - PERMISSIONS ERROR!')
     }
 })
 .then(function() {
@@ -38,9 +39,9 @@ nightmare
         .exists('.email-link')
         .then(function(result){
             if (result) {
-                return console.log('   - Send/View Reminder Enrollment Email: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + Send/View Reminder Enrollment Email: PASS')
             } else {
-                console.log('   + Send/View Reminder Enrollment Email: PASS')
+                console.log('   - Send/View Reminder Enrollment Email: FAIL - PERMISSIONS ERROR!')
             }
         })
 })
@@ -48,7 +49,7 @@ nightmare
     .then(function(){ 
         return nightmare
             .wait(25)
-            .goto(url + '/employee/personal/' + userID)
+            .goto(vars.mainUrl + '/employee/personal/' + vars.employeeID)
             .wait('#ed_f_name293610599')
             .exists("#ed_f_name293610599")
             .then(function (result) {
@@ -56,7 +57,7 @@ nightmare
                 console.log('>>> PERSONAL TAB <<<')
                 console.log(' ')
                 console.log('   --- PERSONAL INFORMATION CARD ---')
-                console.log('       EMPLOYEE -> EMPLOYEE  ')
+                console.log('       ADMIN -> EMPLOYEE  ')
                 console.log(' ')
                 if (result) {
                     return console.log('   + View First Name: PASS')
@@ -142,6 +143,20 @@ nightmare
                 }
             })
     })
+
+    .then(function() {
+        return nightmare
+            .wait(25)
+            .exists('#ed_shirt293610602')
+            .then(function(result){
+                if (result) {
+                    return console.log('   + View Gender Identity: PASS')
+                } else {
+                    console.log("   - View Gender Identity: FAIL - PERMISSIONS ERROR!")
+                }
+            })
+    })
+
     .then(function() {
         return nightmare
             .wait(25)
@@ -161,9 +176,9 @@ nightmare
             .exists('#ed_ssn293610608')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View Social Security Number: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View Social Security Number: PASS')
                 } else {
-                    console.log("   + View Social Security Number: PASS")
+                    console.log("   - View Social Security Number: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
@@ -174,9 +189,9 @@ nightmare
             .exists('#ed_shirt293610602')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View Shirt Size: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View Shirt Size: PASS')
                 } else {
-                    console.log("   + View Shirt Size: PASS")
+                    console.log("   - View Shirt Size: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
@@ -186,9 +201,9 @@ nightmare
             .exists('#ed_293610579')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View Edit Personal Info Button: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View Edit Personal Info Button: PASS')
                 } else {
-                    console.log("   + View Edit Personal Info Button: PASS")
+                    console.log("   - View Edit Personal Info Button: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
@@ -198,9 +213,9 @@ nightmare
             .exists('.ed-crop-edit-icon')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View Edit User Image Button: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View Edit User Image Button: PASS')
                 } else {
-                    console.log("   + View Edit User Image Button: PASS")
+                    console.log("   - View Edit User Image Button: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
@@ -208,7 +223,7 @@ nightmare
     .then(function() {
         console.log(' ')
         console.log('   --- CONTACT INFORMATION CARD ---')
-        console.log('       EMPLOYEE -> EMPLOYEE ')
+        console.log('       ADMIN -> EMPLOYEE ')
         console.log(' ')
         return nightmare
             .wait(25)
@@ -265,9 +280,9 @@ nightmare
             .exists('#ed_293610630')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View Address: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View Address: PASS')
                 } else {
-                    console.log("   + View Address: PASS")
+                    console.log("   - View Address: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
@@ -277,9 +292,9 @@ nightmare
             .exists('#ed_293610631')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View City: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View City: PASS')
                 } else {
-                    console.log("   + View City: PASS")
+                    console.log("   - View City: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
@@ -289,9 +304,9 @@ nightmare
             .exists('#ed_293610632')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View State: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View State: PASS')
                 } else {
-                    console.log("   + View State: PASS")
+                    console.log("   - View State: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
@@ -301,9 +316,9 @@ nightmare
             .exists('#ed_293610633')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View Zip Code: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   - View Zip Code: PASS')
                 } else {
-                    console.log("   + View Zip Code: PASS")
+                    console.log("   + View Zip Code: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
@@ -313,16 +328,16 @@ nightmare
             .exists('#ed_293610592')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View Edit Contact Info Button: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View Edit Contact Info Button: PASS')
                 } else {
-                    console.log("   + View Edit Contact Info Button: PASS")
+                    console.log("   - View Edit Contact Info Button: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
     .then(function() {
         console.log(' ')
         console.log('   --- EMERGENCY CONTACT CARD ---')
-        console.log('       EMPLOYEE -> EMPLOYEE ')
+        console.log('       ADMIN -> EMPLOYEE ')
         console.log(' ')
         return nightmare
             .wait(25)
@@ -377,16 +392,16 @@ nightmare
             .exists('#ed_293610593')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View Edit Emergency Contact Button: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View Edit Emergency Contact Button: PASS!')
                 } else {
-                    console.log("   + View Edit Emergency Contact Button: PASS")
+                    console.log("   - View Edit Emergency Contact Button: FAIL - PERMISSIONS ERROR!")
                 }
             })
     })
     .then(function() {
         console.log(' ')
         console.log('   --- SOCIAL MEDIA CARD ---')
-        console.log('       EMPLOYEE -> EMPLOYEE ')
+        console.log('       ADMIN -> EMPLOYEE ')
         console.log(' ')
         return nightmare
             .wait(25)
@@ -441,9 +456,9 @@ nightmare
             .exists('#ed_293610594')
             .then(function(result){
                 if (result) {
-                    return console.log('   - View Edit Social Media Button: FAIL - PERMISSIONS ERROR!')
+                    return console.log('   + View Edit Social Media Button: PASS')
                 } else {
-                    console.log("   + View Edit Social Media Button: PASS")
+                    console.log("   - View Edit Social Media Button: PASS")
                 }
             })
     })
@@ -458,7 +473,7 @@ nightmare
                 console.log('>>> JOB TAB <<<')
                 console.log(' ')
                 console.log('   --- JOB INFORMATION CARD ---')
-                console.log('       EMPLOYEE -> EMPLOYEE  ')
+                console.log('       ADMIN -> EMPLOYEE  ')
                 console.log(' ')
                 if (result) {
                     return console.log('   + View Employment Status: PASS')
@@ -533,25 +548,25 @@ nightmare
         .exists('#ed_293610609')
         .then(function(result){
             if (result) {
-                return console.log('   - View Edit Job Info Button: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + View Edit Job Info Button: PASS')
             } else {
-                console.log("   + View Edit Job Info Button: PASS")
+                console.log("   - View Edit Job Info Button: FAIL - PERMISSIONS ERROR!")
             }
         })
 })
 .then(function() {
     console.log(' ')
     console.log('   --- BONUS CARD ---')
-    console.log('       EMPLOYEE -> EMPLOYEE ')
+    console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
         .wait(25)
         .exists('.ed-bonus-info')
         .then(function(result){
             if (result) {
-                return console.log("   - View Bonus Information: FAIL - PERMISSIONS ERROR!")
+                return console.log("   + View Bonus Information: PASS")
             } else {
-                console.log('   + View Bonus Information: PASS')
+                console.log('   - View Bonus Information:  FAIL - PERMISSIONS ERROR!')
             }
         })
 })
@@ -561,9 +576,9 @@ nightmare
         .exists('#ed_293610610')
         .then(function(result){
             if (result) {
-                return console.log('   - View Edit Bonus Button: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + View Edit Bonus Button: PASS')
             } else {
-                console.log("   + View Edit Bonus Button: PASS")
+                console.log("   - View Edit Bonus Button: FAIL - PERMISSIONS ERROR!")
             }
         })
 })
@@ -573,25 +588,25 @@ nightmare
         .exists('#ed_293610619')
         .then(function(result){
             if (result) {
-                return console.log('   - View Add Bonus Button: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + View Add Bonus Button: PASS')
             } else {
-                console.log("   + View Add Bonus Button: PASS")
+                console.log("   - View Add Bonus Button: FAIL - PERMISSIONS ERROR!")
             }
         })
 })
 .then(function() {
     console.log(' ')
     console.log('   --- COMPENSATION CARD ---')
-    console.log('       EMPLOYEE -> EMPLOYEE ')
+    console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
         .wait(25)
         .exists('.ed-compensation-info')
         .then(function(result){
             if (result) {
-                return console.log("   - View Employee Compensation: FAIL - PERMISSIONS ERROR!")
+                return console.log("   + View Employee Compensation: PASS")
             } else {
-                console.log('   + View Compensation: PASS')
+                console.log('   - View Compensation: FAIL - PERMISSIONS ERROR!')
             }
         })
 })
@@ -601,25 +616,25 @@ nightmare
         .exists('#ed_293610611')
         .then(function(result){
             if (result) {
-                return console.log('   - View Edit Compensation Button: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + View Edit Compensation Button: PASS')
             } else {
-                console.log("   + View Edit Compensation Button: PASS")
+                console.log("   - View Edit Compensation Button: FAIL - PERMISSIONS ERROR!")
             }
         })
 })
 .then(function() {
     console.log(' ')
     console.log('   --- ASSETS CARD ---')
-    console.log('       EMPLOYEE -> EMPLOYEE ')
+    console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
         .wait(25)
         .exists('.ed-asset-info')
         .then(function(result){
             if (result) {
-                return console.log("   - View Assets: FAIL - PERMISSIONS ERROR!")
+                return console.log("   + View Assets: PASS")
             } else {
-                console.log('   + View Assets: PASS')
+                console.log('   - View Assets: FAIL - PERMISSIONS ERROR!')
             }
         })
 })
@@ -629,9 +644,9 @@ nightmare
         .exists('#ed_293610612')
         .then(function(result){
             if (result) {
-                return console.log('   - View Edit Assets Button: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + View Edit Assets Button: PASS')
             } else {
-                console.log("   + View Edit Assets Button: PASS")
+                console.log("   + No Current Assets: PASS")
             }
         })
 })
@@ -641,16 +656,16 @@ nightmare
         .exists('#ed_293610648')
         .then(function(result){
             if (result) {
-                return console.log('   - View Add Assets Button: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + View Add Assets Button: PASS')
             } else {
-                console.log("   + View Add Assets Button: PASS")
+                console.log("   - View Add Assets Button: FAIL - PERMISSIONS ERROR!")
             }
         })
 })
 .then(function() {
     console.log(' ')
     console.log('   --- DIRECT REPORTS CARD ---')
-    console.log('       EMPLOYEE -> EMPLOYEE ')
+    console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
         .wait(25)
@@ -669,9 +684,9 @@ nightmare
         .exists('#ed_293610613')
         .then(function(result){
             if (result) {
-                return console.log('   - View Edit Direct Reports Button: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + View Edit Direct Reports Button: PASS')
             } else {
-                console.log("   + View Edit Direct Reports Button: PASS")
+                console.log("   - View Edit Direct Reports Button: FAIL - PERMISSIONS ERROR!")
             }
         })
 })
@@ -681,25 +696,25 @@ nightmare
         .exists('#ed_293610649')
         .then(function(result){
             if (result) {
-                return console.log('   - View Add Direct Reports Button: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + View Add Direct Reports Button: PASS')
             } else {
-                console.log("   + View Add Direct Reports Button: PASS")
+                console.log("   - View Add Direct Reports Button: FAIL - PERMISSIONS ERROR!")
             }
         })
 })
 .then(function() {
     console.log(' ')
     console.log('   --- EEO FSLA CARD ---')
-    console.log('       EMPLOYEE -> EMPLOYEE ')
+    console.log('       ADMIN -> EMPLOYEE ')
     console.log(' ')
     return nightmare
         .wait(25)
         .exists('.ed-eeo-fsla-info')
         .then(function(result){
             if (result) {
-                return console.log("   - View EEO And FSLA: FAIL - PERMISSIONS ERROR!")
+                return console.log("   + View EEO And FSLA: PASS")
             } else {
-                console.log('   + View EEO And FSLA: PASS')
+                console.log('   - View EEO And FSLA: FAIL - PERMISSIONS ERROR!')
             }
         })
 })
@@ -712,26 +727,26 @@ nightmare
             console.log('>>> NOTES TAB <<<')
             console.log(' ')
             console.log('   --- NOTES CARD ---')
-            console.log('       EMPLOYEE -> EMPLOYEE  ')
+            console.log('       ADMIN -> EMPLOYEE  ')
             console.log(' ')
             if (result) {
-                return console.log("   - View Notes Tab: FAIL - PERMISSIONS ERROR!")
+                return console.log("   + View Notes Tab Disabled: PASS")
             } else {
-                console.log("   + View Notes Tab: PASS")
+                console.log("   - View Notes Tab Disabled: FAIL - PERMISSIONS ERROR!")
     }
 })
 })
 .then(function() {
     return nightmare
         .wait(25)
-        .goto(url + '/employee/notes/' + userID)
+        .goto(vars.mainUrl + '/employee/notes/' + vars.employeeID)
         .wait(1500)
         .exists('.ed-notes-section')
         .then(function(result){
             if (result) {
-                return console.log("   - View Employee Notes: FAIL - PERMISSIONS ERROR!")
+                return console.log("   + View Employee Notes: PASS")
             } else {
-                console.log('   + View Employee Notes: PASS')
+                console.log('   - View Employee Notes FAIL - PERMISSIONS ERROR!')
             }
         })
 })
@@ -741,9 +756,9 @@ nightmare
         .exists('#ed_293610625')
         .then(function(result){
             if (result) {
-                return console.log('   - View Add Notes Button: FAIL - PERMISSIONS ERROR!')
+                return console.log('   + View Add Notes Button: PASS')
             } else {
-                console.log("   + View Add Notes Button: PASS")
+                console.log("   - View Add Notes Button: FAIL - PERMISSIONS ERROR!")
             }
         })
 })
@@ -756,41 +771,43 @@ nightmare
             console.log('>>> DOCUMENTS TAB <<<')
             console.log(' ')
             console.log('   --- DOCUMENTS CARD ---')
-            console.log('       EMPLOYEE -> EMPLOYEE  ')
+            console.log('       ADMIN -> EMPLOYEE  ')
             console.log(' ')
             if (result) {
-                return console.log("   - View Documents Tab: FAIL - PERMISSIONS ERROR!")
+                return console.log("   + View Documents Tab: PASS")
             } else {
-                console.log("   + View Documents Tab: PASS")
+                console.log("   - View Documents Tab: FAIL - PERMISSIONS ERROR!")
     }
 })
 })
 .then(function() {
     return nightmare
         .wait(25)
-        .goto(url + '/employee/documents/' + userID)
+        .goto(vars.mainUrl + '/employee/documents/' + vars.employeeID)
         .wait(1500)
         .exists('.ed-document-tab-content')
         .then(function(result){
             if (result) {
-                return console.log("   - View Employee Documents: FAIL - PERMISSIONS ERROR!")
+                return console.log("   + View Employee Documents: PASS")
             } else {
-                console.log('   + View Employee Documents: PASS')
+                console.log('   - View Employee Documents: FAIL - PERMISSIONS ERROR!')
             }
         })
 })
 
 
+.then(function(){
+    return nightmare
+    .end()
     .then(function(){
-        return nightmare
-        .end()
-        .then(function(){
-            console.log(' ')
-            console.log('TEST COMPLETED')
-            console.log(' ')
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
-
+        console.log(' ')
+        console.log('A D M I N - E M P L O Y E E  C O M P L E T E')
+        console.log(' ')
     })
+    .catch(function (error) {
+        console.log(error)
+    })
+
+})
+}
+}

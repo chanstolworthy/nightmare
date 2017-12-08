@@ -1,3 +1,5 @@
+
+
 {
   "name": "testing",
   "version": "0.1.0",
@@ -12,6 +14,20 @@
     "start": "PORT=3006 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "all": "node permissions.js" ,
+    "add-employee": "node src/tests/add/add_employee_TEST.js",
+    "login": "node src/tests/basic/login_TEST.js",
+    "forgot-password": "node src/tests/basic/forgot_password_TEST.js",
+    "enroll-company": "node src/tests/add/company_enrollment_TEST.js",
+    "create-employee-attempt": "node src/tests/add/create_employee_account_attempt_TEST.js",
+    "edit-self-admin": "node src/tests/basic/node admin_edit_self_TEST.js",
+    "employee-employee": "node  src/tests/permissions/npm_employee_employee.js",
+    "employee-self": "node  src/tests/permissions/npm_employee_self.js",
+    "manager-employee": "node  src/tests/permissions/npm_manager_employee.js",
+    "manager-self": "node  src/tests/permissions/npm_manager_self.js",
+    "admin-self": "node  src/tests/permissions/npm_admin_self.js",
+    "admin-employee": "node  src/tests/permissions/yarn_admin_employee.js"
+
   }
 }

@@ -1,31 +1,31 @@
 const Nightmare = require('nightmare')
 const nightmare = Nightmare({ show: true })
 var testResults = 'Passed'
-const url = 'http://localhost:3000'
+const vars = require('../../../TestVariables')
 
 
 nightmare
   .viewport(1200, 1000)
-  .goto(url + '/login')
+  .goto(vars.mainUrl + '/login')
   .wait(2000)
-  .screenshot('../../../Testing Screenshots/forgot_password/correct-website.png')
+  // .screenshot('../../../Testing Screenshots/forgot_password/correct-website.png')
   .click('.forgot-link')
   .wait(1000)
   .click('#ed_293610560')
   .wait(500)
-  .type('#ed_293610560', 'eddyhr.test1@gmail.co')
+  .type('#ed_293610560', vars.notValidEmail)
   .wait(500)
   .click('#ed_293610561')
   .wait(2000)
-  .screenshot('../../../Testing Screenshots/forgot_password/invalid_email.png')
+  // .screenshot('../../../Testing Screenshots/forgot_password/invalid_email.png')
   .click('#ed_293610560')
   .wait(500)
-  .type('#ed_293610560','m')
+  .type('#ed_293610560', 'm')
   .wait(500)
-  .screenshot('../../../Testing Screenshots/forgot_password/correct_email.png')
+  // .screenshot('../../../Testing Screenshots/forgot_password/correct_email.png')
   .click('#ed_293610562')
   .wait(3000)
-  .screenshot('../../../Testing Screenshots/forgot_password/forgot_password_sent.png')
+  // .screenshot('../../../Testing Screenshots/forgot_password/forgot_password_sent.png')
 
   .end()
     .then(function (result) {
