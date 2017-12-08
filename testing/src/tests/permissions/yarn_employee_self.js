@@ -1,7 +1,7 @@
 var Nightmare = require('nightmare');
 var nightmare = Nightmare({ show: true });
 const vars = require('../../../TestVariables')
-const empSelf = require('./employee_employee_permissions_TEST')
+const empSelf = require('./employee_self_permissions_TEST')
 const elements = require('../../components/elements')
 
 nightmare

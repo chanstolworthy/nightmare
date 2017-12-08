@@ -1,10 +1,9 @@
-
-
 {
   "name": "testing",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chalk": "^2.3.0",
     "nightmare": "^2.10.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -15,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "all": "node permissions.js" ,
+    "all": "node permissions.js",
     "add-employee": "node src/tests/add/add_employee_TEST.js",
     "login": "node src/tests/basic/login_TEST.js",
     "forgot-password": "node src/tests/basic/forgot_password_TEST.js",
@@ -28,6 +27,5 @@
     "manager-self": "node  src/tests/permissions/yarn_manager_self.js",
     "admin-self": "node  src/tests/permissions/yarn_admin_self.js",
     "admin-employee": "node  src/tests/permissions/yarn_admin_employee.js"
-
   }
 }
