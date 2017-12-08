@@ -60,10 +60,6 @@ else{
 }
   })
 })
-.then(function(){
-  return nightmare
-  .click('#ed_293610548')
-})
 
 .then(function(){
   return nightmare
@@ -72,12 +68,16 @@ else{
   .then(function(result){
     if(result){
       console.log(chalk.green('   + Add Employee Button Clicked: PASS'))
-  }
-  else{
+    }
+    else{
       console.log(chalk.red('   - Add Employee Button Clicked: FAIL'))
-  }
-    })
+    }
   })
+})
+   .then(function(){
+      return nightmare
+        .click('#ed_293610548')
+        })
 
   .then(function(){
     return nightmare
