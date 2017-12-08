@@ -9,7 +9,7 @@ export default function TestList() {
 
 {/* -------------------------------------EMPLOYEE LOGIN-------------------------------------*/}
             <div className='test_list_cont'>
-                <div className='test_command'>yarn login</div>
+                <div className='test_command'>yarn login-user</div>
                 <div className='test_desc'>Tests the main login page</div>
             </div>
 

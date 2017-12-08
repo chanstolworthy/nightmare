@@ -16,7 +16,7 @@
     "eject": "react-scripts eject",
     "all": "node permissions.js",
     "add-employee": "node src/tests/add/add_employee_TEST.js",
-    "login": "node src/tests/basic/login_TEST.js",
+    "login-user": "node src/tests/basic/login_TEST.js",
     "forgot-password": "node src/tests/basic/forgot_password_TEST.js",
     "enroll-company": "node src/tests/add/company_enrollment_TEST.js",
     "create-employee-attempt": "node src/tests/add/create_employee_account_attempt_TEST.js",

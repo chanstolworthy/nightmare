@@ -2,45 +2,75 @@ const Nightmare = require('nightmare')
 const nightmare = Nightmare({ show: true })
 var testResults = 'Passed'
 const vars = require('../../../TestVariables')
-
+const chalk = require('chalk');
 
 nightmare
-  .viewport(1200, 1000)
-  .goto(vars.mainUrl + '/login')
-  .wait(500)
-  // .screenshot('../../../Testing Screenshots/login_test/correct-website.png')
-  .click('#ed_293610547')
-  .wait(200)
-  .type('#ed_293610547', vars.AdminEmail)
-  .wait(200)
-  // .screenshot('../../../Testing Screenshots/login_test/email_added.png')
-  .click('#ed_293610546')
-  .wait(200)
-  .type('#ed_293610546', vars.AdminPassword)
-  .wait(200)
-  // .screenshot('../../../Testing Screenshots/login_test/password_added.png')
-  .click('.ed-btn-sign-in')
-  .wait(3000)
-  // .screenshot('../../../Testing Screenshots/login_test/logged_in.png')
-  .end()
-    .then(function (result) {
-      console.log('    ')
-      console.log('    ')
-      console.log('  LOGIN - TEST RESULTS: ')
-      console.log('    ')
-      console.log('    + Directed To Correct Website:', testResults)
-      console.log('    --------------------------------------------------')
-      console.log('    + Email Address Added:', testResults)
-      console.log('    --------------------------------------------------')
-      console.log('    + Password Added:', testResults)
-      console.log('    --------------------------------------------------')
-      console.log('    + Clicked Signin Button:', testResults)
-      console.log('    --------------------------------------------------')
-      console.log('    ')
-      console.log('  TEST COMPLETED ')
-      console.log('    ')
-      console.log('    ')
+.viewport(1200, 1000)
+.goto(vars.mainUrl + '/login')
+.wait('.forgot-link')
+.wait(1100)
+.exists('#ed_293610547')
+.then(function(result){
+  console.log('   ')
+  console.log('   ')
+  console.log('///////////////////////L O G I N  T E S T///////////////////////')
+  console.log('   ')
+  console.log('   ')
+  console.log(chalk.bold('>>> LOGIN PAGE <<<'))
+  console.log(' ')
+  if(result){
+      console.log(chalk.green('   + Email Field Visible: PASS'))
+  }
+  else{
+      console.log(chalk.red('   - Email Field Visible: FAIL'))
+  }
+})
+
+.then(function(){
+      return nightmare
+      .insert('#ed_293610547', vars.AdminEmail)
+      .wait(100)
+      .insert('#ed_293610546', vars.AdminPassword)
+      .wait(100)
+      .exists('#ed_293610546')
+      .then(function(result){
+        if(result){
+            console.log(chalk.green('   + Insert Email: PASS'))
+            console.log(chalk.green('   + Insert Password: PASS'))
+        }
+        else{
+            console.log(chalk.red('   - Insert Email: FAIL'))
+            console.log(chalk.red('   - Insert Password: FAIL'))
+        }
+      })
+    })
+
+.then(function(){
+return nightmare
+.click('.ed-btn-sign-in')
+.wait('#ed_293610548')
+.exists('#ed_293610548')
+.then(function(result){
+  if(result){
+    console.log(chalk.green('   + User Logged In: PASS'))
+}
+else{
+    console.log(chalk.red('   - User Logged In: FAIL'))
+}
+  })
+})
+
+
+
+  .then(function(){
+    return nightmare
+    .end()
+    .then(function(){
+        console.log(' ')
+        console.log('L O G I N   C O M P L E T E')
+        console.log(' ')
     })
     .catch(function (error) {
-      console.error('Error:', error);
+        console.log(error)
     })
+  })
