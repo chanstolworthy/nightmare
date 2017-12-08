@@ -36,6 +36,10 @@
                 <div className='test_command'>yarn edit-self-admin</div>
                 <div className='test_desc'>Logs Admin in, then edits Employee Information</div>
             </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
 -------------------------------------ADMIN PERMISSIONS SELF-------------------------------------
             <div className='test_list_cont'>
                 <div className='test_command'>node admin_permissions_TEST.js</div>
