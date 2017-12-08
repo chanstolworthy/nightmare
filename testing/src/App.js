@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TestList from './TestList'
-import FE from './frontend'
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,7 +17,6 @@ class App extends Component {
         <p className="App-intro">
           To get started, start the front end using npm start / yarn start, then type the following into the ternimal:
         </p>
-        <FE />
         <TestList />
       </div>
     );
