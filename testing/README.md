@@ -1,3 +1,9 @@
+  <h1 className="App-title">Eddy Testing with Nightmare JS</h1>
+      
+  <p className="App-intro">
+          To get started, start the front end using npm start / yarn start, then type the following into the ternimal:
+        </p>
+
 <div className='list_body'>
         <br/>
 
