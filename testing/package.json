@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "chalk": "^2.3.0",
+    "cloc": "^2.3.2",
     "nightmare": "^2.10.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
