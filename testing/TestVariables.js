@@ -1,20 +1,20 @@
 
 module.exports={
-    mainUrl:'https://dev.eddyhr.com',
+    mainUrl:'https://staging.eddyhr.com',
 
-    AdminID:'1510865716190',
-    AdminEmail:'eddyhr.test1@gmail.com',
+    AdminID:'1513859857861',
+    AdminEmail:'eddyhrtest1@gmail.com',
     AdminPassword:'Eddyhr!123',
 
-    managerID:'1510873883586',
-    managerEmail:'eddyhr.test2@gmail.com',
+    managerID:'1513860379157',
+    managerEmail:'eddyhrtest2@gmail.com',
     managerPassword:'Eddyhr!123',
 
-    employeeID:'1510874056660',
-    employeeEmail:'eddyhr.test4@gmail.com',
+    employeeID:'1513866125646',
+    employeeEmail:'eddyhrtest4@gmail.com',
     employeePassword:'Eddyhr!123',
 
-    potentialEmployeeEmail: 'eddyhr.test4@gmail.com',
+    potentialEmployeeEmail: 'eddyhrtest4@gmail.com',
     potentialEmployeePassword: 'Eddyhr!123',
 
     notValidEmail: 'eddyhr.test1@gmail.co',

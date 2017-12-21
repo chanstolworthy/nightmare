@@ -59,7 +59,7 @@ module.exports = {
                 console.log(chalk.bold('>>> PERSONAL TAB <<<'))
                 console.log(' ')
                 console.log('   --- PERSONAL INFORMATION CARD ---')
-                console.log('       EMPLOYEE -> SELF  ')
+                console.log('       MANAGER -> SELF  ')
                 console.log(' ')
                 if (result) {
                     return console.log(chalk.green('   + View First Name: PASS'))
@@ -595,7 +595,7 @@ module.exports = {
     .then(function() {
         console.log(' ')
         console.log('   --- EMERGENCY CONTACT CARD ---')
-        console.log('       EMPLOYEE -> SELF ')
+        console.log('       MANAGER -> SELF ')
         console.log(' ')
         return nightmare
             .wait(25)
@@ -730,7 +730,7 @@ module.exports = {
     .then(function() {
         console.log(' ')
         console.log('   --- SOCIAL MEDIA CARD ---')
-        console.log('       EMPLOYEE -> SELF ')
+        console.log('       MANAGER -> SELF ')
         console.log(' ')
         return nightmare
             .wait(25)
@@ -858,7 +858,7 @@ module.exports = {
                 console.log(chalk.bold('>>> JOB TAB <<<'))
                 console.log(' ')
                 console.log('   --- JOB INFORMATION CARD ---')
-                console.log('       EMPLOYEE -> SELF  ')
+                console.log('       MANAGER -> SELF  ')
                 console.log(' ')
                 if (result) {
                     return console.log(chalk.green('   + View Employment Status: PASS'))
@@ -942,7 +942,7 @@ module.exports = {
 .then(function() {
     console.log(' ')
     console.log('   --- BONUS CARD ---')
-    console.log('       EMPLOYEE -> SELF ')
+    console.log('       MANAGER -> SELF ')
     console.log(' ')
     return nightmare
         .wait(25)
@@ -982,7 +982,7 @@ module.exports = {
 .then(function() {
     console.log(' ')
     console.log('   --- COMPENSATION CARD ---')
-    console.log('       EMPLOYEE -> SELF ')
+    console.log('       MANAGER -> SELF ')
     console.log(' ')
     return nightmare
         .wait(25)
@@ -1010,7 +1010,7 @@ module.exports = {
 .then(function() {
     console.log(' ')
     console.log('   --- ASSETS CARD ---')
-    console.log('       EMPLOYEE -> SELF ')
+    console.log('       MANAGER -> SELF ')
     console.log(' ')
     return nightmare
         .wait(25)
@@ -1050,7 +1050,7 @@ module.exports = {
 .then(function() {
     console.log(' ')
     console.log('   --- DIRECT REPORTS CARD ---')
-    console.log('       EMPLOYEE -> SELF ')
+    console.log('       MANAGER -> SELF ')
     console.log(' ')
     return nightmare
         .wait(25)
@@ -1090,7 +1090,7 @@ module.exports = {
 .then(function() {
     console.log(' ')
     console.log('   --- EEO FSLA CARD ---')
-    console.log('       EMPLOYEE -> SELF ')
+    console.log('       MANAGER -> SELF ')
     console.log(' ')
     return nightmare
         .wait(25)
@@ -1112,7 +1112,7 @@ module.exports = {
             console.log(chalk.bold('>>> NOTES TAB <<<'))
             console.log(' ')
             console.log('   --- NOTES CARD ---')
-            console.log('       EMPLOYEE -> SELF  ')
+            console.log('       MANAGER -> SELF  ')
             console.log(' ')
             if (result) {
                 return console.log(chalk.red('   - View Notes Tab: FAIL - PERMISSIONS ERROR!'))
@@ -1156,7 +1156,7 @@ module.exports = {
             console.log(chalk.bold('>>> DOCUMENTS TAB <<<'))
             console.log(' ')
             console.log('   --- DOCUMENTS CARD ---')
-            console.log('       EMPLOYEE -> SELF  ')
+            console.log('       MANAGER -> SELF  ')
             console.log(' ')
             if (result) {
                 return console.log(chalk.green('   + View Documents Tab: PASS'))

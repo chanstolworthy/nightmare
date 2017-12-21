@@ -18,7 +18,9 @@ return nightmare
 .wait(25)
 .type('#ed_293610546', vars.employeePassword)
 .wait(25)
-.click('.ed-btn-sign-in')
+.click('#ed_293610551')
+.wait(3000)
+.goto(vars.mainUrl + '/company/directory')
 .wait(1000)
 .exists('#ed_293610548')
 .then(function(result){
@@ -50,7 +52,7 @@ return nightmare
 
     .then(function(){ 
         return nightmare
-            .wait(25)
+            .wait(1000)
             .goto(vars.mainUrl + '/employee/personal/' + vars.employeeID)
             .wait('#ed_f_name293610599')
             .exists("#ed_f_name293610599")
